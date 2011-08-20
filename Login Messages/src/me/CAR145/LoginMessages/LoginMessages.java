@@ -20,7 +20,10 @@ public class LoginMessages extends JavaPlugin {
 
 	public final Logger log = Logger.getLogger("Minecraft");
 	private final LoginMessagesPlayerListener playerListener = new LoginMessagesPlayerListener(this);
-	String rules;
+	String rules1;
+	String rules2;
+	String rules3;
+	String rules4;
 
 
 	@Override
@@ -46,7 +49,10 @@ public class LoginMessages extends JavaPlugin {
 			Player player = (Player) sender;
 			if (commandName.equalsIgnoreCase("Rules")) {
 				if (split.length == 0) {
-					player.sendMessage(ChatColor.GOLD + "Server Rules: " + rules); 
+					player.sendMessage(ChatColor.GOLD + "Server Rules: " + rules1);
+					player.sendMessage(ChatColor.GOLD + rules2);
+					player.sendMessage(ChatColor.GOLD + rules3);
+					player.sendMessage(ChatColor.GOLD + rules4);
 				}
 
 			}
@@ -60,10 +66,15 @@ public class LoginMessages extends JavaPlugin {
 		config.load();
 
 
-		rules = config.getString("rules-message", " <Replace with server rules>");
+		rules1 = config.getString("rules-line-1", " <Replace with server rules> ");
+		rules2 = config.getString("rules-line-2", " <replace with rules line 2> ");
+		rules3 = config.getString("rules-line-3", " <replace with rules line 3> ");
+		rules4 = config.getString("rules-line-4", " <replace with rules line 4> ");
 
-
-		config.setProperty("rules-message", rules);
+                config.setProperty("rules-line-1", rules1);
+                config.setProperty("rules-line-2", rules2);
+                config.setProperty("rules-line-3", rules3);
+                config.setProperty("rules-line-4", rules4);
 
 		config.save();
 	}
