@@ -47,12 +47,12 @@ public class LoginMessages extends JavaPlugin {
 		String commandName = command.getName().toLowerCase();
 		if (sender instanceof Player) {
 			Player player = (Player) sender;
-			if (commandName.equalsIgnoreCase("Rules")) {
+			if (commandName.equalsIgnoreCase("VIP")) {
 				if (split.length == 0) {
-					player.sendMessage(ChatColor.GOLD + "Server Rules: " + rules1);
-					player.sendMessage(ChatColor.GOLD + rules2);
-					player.sendMessage(ChatColor.GOLD + rules3);
-					player.sendMessage(ChatColor.GOLD + rules4);
+					player.sendMessage(ChatColor.GOLD + "VIP");
+                                        player.sendMessage(ChatColor.GOLD + GAVIMAS);
+                                        player.sendMessage(ChatColor.GOLD + "VIP2");
+                                        player.sendMessage(ChatColor.GOLD + "VIP3");
 				}
 
 			}
@@ -65,16 +65,15 @@ public class LoginMessages extends JavaPlugin {
 		Configuration config = getConfiguration();
 		config.load();
 
+                VIP = config.getString("VIP-line-1", " <Replace with something> ");
+		GAVIMAS = config.getString("rules-line-1", " <Ka gauna> ");
+                VIP2 = config.getString("VIP-line-2", " <Replace with something> ");
+                VIP3 = config.getString("VIP-line-3", " <Replace with something> ");
 
-		rules1 = config.getString("rules-line-1", " <Replace with server rules> ");
-		rules2 = config.getString("rules-line-2", " <replace with rules line 2> ");
-		rules3 = config.getString("rules-line-3", " <replace with rules line 3> ");
-		rules4 = config.getString("rules-line-4", " <replace with rules line 4> ");
-
-                config.setProperty("rules-line-1", rules1);
-                config.setProperty("rules-line-2", rules2);
-                config.setProperty("rules-line-3", rules3);
-                config.setProperty("rules-line-4", rules4);
+                config.setProperty("VIP-line-1", VIP);
+                config.setProperty("rules-line-1", GAVIMAS);
+                config.setProperty("VIP-line-2", VIP2);
+                config.setProperty("VIP-line-3", VIP3);
 
 		config.save();
 	}
