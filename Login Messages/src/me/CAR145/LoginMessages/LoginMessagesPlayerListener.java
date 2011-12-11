@@ -20,7 +20,7 @@ public class LoginMessagesPlayerListener extends PlayerListener{
 	{
 
 
-		plugin.getServer().broadcastMessage(ChatColor.LIGHT_PURPLE + "[Server] Welcome to the server " + event.getPlayer().getName() + "! Type /Rules for server rules! :D");
+		plugin.getServer().broadcastMessage(ChatColor.LIGHT_PURPLE + "Rasyk /VIP norint suzinoti jo galimybes!" + event.getPlayer().getName();
 	}
 
 
